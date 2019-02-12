@@ -39,6 +39,7 @@ O Cancelamento de ordem assumi que o pedido de cancelamento de ordem venha de um
             "buy_ordes": ,
             "sell_ordes": 
            }, 
-  ...]
+           ...,
+          ]
  }
  ```          
