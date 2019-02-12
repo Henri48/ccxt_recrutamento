@@ -33,7 +33,7 @@ O Cancelamento de ordem assumi que o pedido de cancelamento de ordem venha de um
   "params": ' ',
  }
  ```
- As ordens do mercado www.3xbit.com são salvas em um .json da forma:
+ As ordens do mercado [https://3xbit.com.br/](https://3xbit.com.br/) são salvas em um .json da forma:
  ```bash
  {market: [{"symbol": ,
             "buy_ordes": ,
