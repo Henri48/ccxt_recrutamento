@@ -9,24 +9,23 @@ print(exchanges)
 # verfificar os precos dos livros.
 def book_price(exchanges):
     for exchan in exchanges:
-        if exchan != "acx":
-            exchange = getattr(ccxt, exchan)()
-            exchange.load_markets()
+        exchange = getattr(ccxt, exchan)()
+        exchange.load_markets()
 
-            with open("{}.json".format(exchan), "w") as write_file:
-                data = {}
+        with open("{}.json".format(exchan), "w") as write_file:
+            data = {}
 
-                for i in exchange.symbols:
-                    if exchange.has['fetchTicker']:
-                        Price_Tickers = exchange.fetch_ticker(i)
-                    else:
-                        Price_Tickers = "This exchange don't have fetch_ticker method"
-                    orderbook = exchange.fetch_order_book(i)
+            for i in exchange.symbols:
+                if exchange.has['fetchTicker']:
+                    Price_Tickers = exchange.fetch_ticker(i)
+                else:
+                    Price_Tickers = "This exchange don't have fetch_ticker method"
+                orderbook = exchange.fetch_order_book(i)
 
-                    data[i] = [Price_Tickers, orderbook]
-                    print(i)
+                data[i] = [Price_Tickers, orderbook]
+                print(i)
 
-                json.dump(data, write_file)
+            json.dump(data, write_file)
 
 # Ordem de Execucao
 def excution_order(order):
